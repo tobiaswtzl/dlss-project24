@@ -1,3 +1,8 @@
+# files
+data/raw/the-reddit-climate-change-dataset-comments.csv
+data/raw/the-reddit-climate-change-dataset-posts.csv
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
