@@ -69,5 +69,10 @@ comments[['cleaned', 'lemmatized']] = comments['body'].apply(lambda x: pd.Series
 posts[['title_cleaned', 'title_lemmatized']] = posts['title'].apply(lambda x: pd.Series(preprocess_text(x)))
 posts[['selftext_cleaned', 'selftext_lemmatized']] = posts['selftext'].apply(lambda x: pd.Series(preprocess_text(x)))
 
+## transform timestamp to human readable
+comments["created_utc"] = pd.to_datetime(comments["created_utc"], unit='s')
+posts["created_utc"] = pd.to_datetime(posts["created_utc"], unit='s')
+
+## write
 comments.to_csv("data/preprocessed/comments.csv")
 posts.to_csv("data/preprocessed/posts.csv")
