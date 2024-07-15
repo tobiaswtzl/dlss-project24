@@ -53,7 +53,7 @@ def preprocess_text(text):
         doc = list(nlp.pipe([text], disable=["ner", "parser"]))[0]
         
         ## use list of stopwords for faster lookup, add "gt" which is some html junk
-        stop_words = nlp.Defaults.stop_words.add("'gt")
+        stop_words = nlp.Defaults.stop_words
         
         cleaned_tokens = []
         for token in doc:
@@ -78,6 +78,8 @@ posts[['title_cleaned', 'title_lemmatized']] = posts['title'].apply(lambda x: pd
 posts[['selftext_cleaned', 'selftext_lemmatized']] = posts['selftext'].apply(lambda x: pd.Series(preprocess_text(x)))
 
 ## combine title and text
+## selftext to empty string if nan
+posts["selftext"] = posts["selftext"].apply(lambda x: "" if pd.isna(x) else x)
 posts["title_and_text"] = posts["title"] + " " + posts["selftext"]
 posts["title_and_text_cleaned"] = posts["title_cleaned"] + " " + posts["selftext_cleaned"]
 posts["title_and_text_lemmatized"] = posts["title_lemmatized"] + " " + posts["selftext_lemmatized"]
@@ -103,10 +105,10 @@ comments = comments.rename(columns={
 
 all_text = pd.concat([
     posts[["title_and_text", "title_and_text_cleaned", "title_and_text_lemmatized"]],
-    comments[[["title_and_text", "title_and_text_cleaned", "title_and_text_lemmatized"]] ],
+    comments[["title_and_text", "title_and_text_cleaned", "title_and_text_lemmatized"]] ],
                      axis=0).reset_index(drop=True)
 
 
 
 
-#all_text.to_csv("data/preprocessed/all_text.csv")
+all_text.to_csv("data/preprocessed/all_text.csv")
