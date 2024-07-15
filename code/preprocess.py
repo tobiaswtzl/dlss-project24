@@ -3,6 +3,7 @@ import spacy
 import pandas as pd
 import subprocess
 from langdetect import detect
+import re
 
 ## install english spacy model (if not already installed) and load
 try:
@@ -41,11 +42,18 @@ def preprocess_text(text):
         if lang != 'en':
             return pd.NA, pd.NA
         
-        ## disable parser and named entity recognition to safe time, process in batches
-        doc = list(nlp.pipe([text.lower()], disable=["ner", "parser"]))[0]
+        ## to lower case
+        text = text.lower()
         
-        ## use list of stopwords for faster lookup
-        stop_words = nlp.Defaults.stop_words
+        ## remove html junk
+        text = text.replace('&gt;', ' ')
+        text = re.sub(r"u/\w+", "" , text)
+        
+        ## disable parser and named entity recognition to safe time, process in batches
+        doc = list(nlp.pipe([text], disable=["ner", "parser"]))[0]
+        
+        ## use list of stopwords for faster lookup, add "gt" which is some html junk
+        stop_words = nlp.Defaults.stop_words.add("'gt")
         
         cleaned_tokens = []
         for token in doc:
@@ -57,7 +65,7 @@ def preprocess_text(text):
         
         return cleaned, lemmatized
     except:
-        return pd.NA, pd.NA
+        return "", ""
     
 
 ## load data in, drop non relevant cols, can be later merged on id
@@ -74,6 +82,7 @@ posts["title_and_text"] = posts["title"] + " " + posts["selftext"]
 posts["title_and_text_cleaned"] = posts["title_cleaned"] + " " + posts["selftext_cleaned"]
 posts["title_and_text_lemmatized"] = posts["title_lemmatized"] + " " + posts["selftext_lemmatized"]
 
+
 ## transform timestamp to human readable
 #comments["created_utc"] = pd.to_datetime(comments["created_utc"], unit='s')
 #posts["created_utc"] = pd.to_datetime(posts["created_utc"], unit='s')
@@ -81,3 +90,23 @@ posts["title_and_text_lemmatized"] = posts["title_lemmatized"] + " " + posts["se
 ## write
 comments.to_csv("data/preprocessed/comments.csv")
 posts.to_csv("data/preprocessed/posts.csv")
+
+
+
+## create one df which contains all text
+## change col names to enable merge
+comments = comments.rename(columns={
+    'body': 'title_and_text',
+    'cleaned': 'title_and_text_cleaned',
+    'lemmatized': 'title_and_text_lemmatized'
+})
+
+all_text = pd.concat([
+    posts[["title_and_text", "title_and_text_cleaned", "title_and_text_lemmatized"]],
+    comments[[["title_and_text", "title_and_text_cleaned", "title_and_text_lemmatized"]] ],
+                     axis=0).reset_index(drop=True)
+
+
+
+
+#all_text.to_csv("data/preprocessed/all_text.csv")
