@@ -61,17 +61,22 @@ def preprocess_text(text):
     
 
 ## load data in, drop non relevant cols, can be later merged on id
-posts = pd.read_csv("data/raw/posts_sample.csv")#[["id", "title", "selftext"]]
-comments = pd.read_csv("data/raw/comments_sample.csv")#[["id", "body"]]
+posts = pd.read_csv("data/raw/posts_sample.csv")[["id", "title", "selftext"]]
+comments = pd.read_csv("data/raw/comments_sample.csv")[["id", "body"]]
 
 ## preprocess text, to lower case, keep only alphabetical text, lemmatise
 comments[['cleaned', 'lemmatized']] = comments['body'].apply(lambda x: pd.Series(preprocess_text(x)))
 posts[['title_cleaned', 'title_lemmatized']] = posts['title'].apply(lambda x: pd.Series(preprocess_text(x)))
 posts[['selftext_cleaned', 'selftext_lemmatized']] = posts['selftext'].apply(lambda x: pd.Series(preprocess_text(x)))
 
+## combine title and text
+posts["title_and_text"] = posts["title"] + " " + posts["selftext"]
+posts["title_and_text_cleaned"] = posts["title_cleaned"] + " " + posts["selftext_cleaned"]
+posts["title_and_text_lemmatized"] = posts["title_lemmatized"] + " " + posts["selftext_lemmatized"]
+
 ## transform timestamp to human readable
-comments["created_utc"] = pd.to_datetime(comments["created_utc"], unit='s')
-posts["created_utc"] = pd.to_datetime(posts["created_utc"], unit='s')
+#comments["created_utc"] = pd.to_datetime(comments["created_utc"], unit='s')
+#posts["created_utc"] = pd.to_datetime(posts["created_utc"], unit='s')
 
 ## write
 comments.to_csv("data/preprocessed/comments.csv")
