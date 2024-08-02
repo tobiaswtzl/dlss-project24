@@ -47,7 +47,7 @@ def preprocess_text(text):
         
         ## remove html junk
         text = text.replace('&gt;', ' ')
-        text = re.sub(r"u/\w+", "" , text)
+        text = re.sub(r"u/\w+", "username" , text)
         
         ## disable parser and named entity recognition to safe time, process in batches
         doc = list(nlp.pipe([text], disable=["ner", "parser"]))[0]
