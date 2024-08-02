@@ -47,17 +47,15 @@ def preprocess_text(text):
         
         ## remove html junk
         text = text.replace('&gt;', ' ')
+        ## substuture usernames
         text = re.sub(r"u/\w+", "" , text)
         
         ## disable parser and named entity recognition to safe time, process in batches
         doc = list(nlp.pipe([text], disable=["ner", "parser"]))[0]
-        
-        ## use list of stopwords for faster lookup, add "gt" which is some html junk
-        stop_words = nlp.Defaults.stop_words
-        
+                
         cleaned_tokens = []
         for token in doc:
-            if token.is_alpha and not token.like_url and token not in stop_words:
+            if token.is_alpha and not token.like_url:
                 cleaned_tokens.append(token)
         
         cleaned = ' '.join([token.text for token in cleaned_tokens])
