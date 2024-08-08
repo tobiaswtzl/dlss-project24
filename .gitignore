@@ -3,6 +3,7 @@ data/raw/the-reddit-climate-change-dataset-comments.csv
 data/raw/the-reddit-climate-change-dataset-posts.csv
 .DS_Store
 data/.DS_Store
+tuning_results/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
