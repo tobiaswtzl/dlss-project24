@@ -1,0 +1,1 @@
+d:/dlss-project24/tuning_results/run_08-10_11_07/trial_fc048_00001/checkpoint_000008/checkpoint_CBOW.pt
