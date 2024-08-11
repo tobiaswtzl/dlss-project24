@@ -1,1 +1,1 @@
-d:/dlss-project24/tuning_results/run_08-10_10_48/trial_44ca2_00000/checkpoint_000008/checkpoint_skipgram.pt
+c:/Users/weitz/Desktop/dlss-project24/tuning_results/run_08-11_02_28/trial_972b2_00007/checkpoint_000009/checkpoint_skipgram.pt

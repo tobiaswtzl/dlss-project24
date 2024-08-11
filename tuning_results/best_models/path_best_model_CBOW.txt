@@ -1,1 +1,1 @@
-d:/dlss-project24/tuning_results/run_08-10_11_07/trial_fc048_00001/checkpoint_000008/checkpoint_CBOW.pt
+c:/Users/weitz/Desktop/dlss-project24/tuning_results/run_08-11_00_45/trial_37b67_00005/checkpoint_000025/checkpoint_CBOW.pt
