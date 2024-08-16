@@ -1,0 +1,1 @@
+d:/dlss-project24/tuning_results/run_08-16_17_59/trial_8c43e_00000/checkpoint_000001/checkpoint_skipgram.pt
