@@ -1,0 +1,40 @@
+year,top_10_words,topic
+2010,"['global', 'new', 'scientist', 'warming', 'fight', 'report', 'science', 'laden']",Climate Change and Scientific Reporting
+2010,"['global', 'warming', 'science', 'world', 'scientist', 'energy', 'new', 'oil']",Global Energy and Environmental Science
+2010,"['science', 'global', 'world', 'new', 'effect', 'warming', 'people', 'scientist']",Global Impact of Climate Change
+2011,"['denial', 'global', 'science', 'world', 'new', 'scientist', 'warming', 'scientific']",Climate Change and Scientific Reporting
+2011,"['global', 'warming', 'year', 'scientist', 'cause', 'science', 'new', 'world']",Causes and Scientific Study of Global Warming
+2011,"['new', 'global', 'scientist', 'study', 'denial', 'science', 'report', 'link']",Climate Change and Scientific Reporting
+2012,"['world', 'new', 'global', 'sandy', 'science', 'effect', 'hurricane', 'denial']",Global Impact and Scientific Analysis of Hurricanes
+2012,"['obama', 'global', 'scientist', 'cause', 'sandy', 'weather', 'study', 'new']",Scientific Studies on Global Causes and Weather Events
+2012,"['global', 'science', 'new', 'world', 'year', 'warming', 'know', 'scientist']",Global Warming and Scientific Understanding
+2013,"['global', 'new', 'world', 'warming', 'science', 'year', 'study', 'cause']",Global Warming and Scientific Studies
+2013,"['obama', 'plan', 'study', 'link', 'action', 'fight', 'new', 'scientist']",Scientific Action Plans and Climate Change
+2013,"['obama', 'global', 'report', 'new', 'study', 'action', 'scientist', 'denier']",Climate Action and Denial in Global Reports
+2014,"['global', 'new', 'warming', 'world', 'science', 'scientist', 'year', 'people']",Global Warming and Its Impact on People
+2014,"['world', 'new', 'global', 'science', 'report', 'warming', 'year', 'effect']",Climate Change and Scientific Reporting
+2014,"['global', 'new', 'report', 'obama', 'scientist', 'fight', 'denier', 'study']",Climate Action and Denial in Global Reports
+2015,"['global', 'r', 'year', 'world', 'new', 'scientist', 'summary', 'autotldr']",Climate Change and Scientific Reporting
+2015,"['obama', 'pope', 'global', 'fight', 'new', 'scientist', 'action', 'study']",Climate Action and Global Leadership
+2015,"['world', 'global', 'pope', 'new', 'science', 'scientist', 'paris', 'warming']",Climate Action and Global Leadership
+2016,"['global', 'r', 'year', 'world', 'new', 'scientist', 'summary', 'autotldr']",Climate Change and Scientific Reporting
+2016,"['obama', 'pope', 'global', 'fight', 'new', 'scientist', 'action', 'study']",Climate Action and Global Leadership
+2016,"['world', 'global', 'pope', 'new', 'science', 'scientist', 'paris', 'warming']",Climate Action and Global Leadership
+2017,"['r', 'trump', 'world', 'global', 'people', 'year', 'science', 'new']",Climate Change and Scientific Reporting
+2017,"['trump', 'world', 'new', 'scientist', 'science', 'donald', 'fight', 'epa']",Climate Action and U.S. Leadership
+2017,"['trump', 'fight', 'world', 'paris', 'scientist', 'donald', 'study', 'china']",Climate Change and Scientific Reporting
+2018,"['fight', 'trump', 'world', 'report', 'need', 'stop', 'global', 'scientist']",Climate Action and U.S. Leadership
+2018,"['world', 'people', 'r', 'year', 'trump', 'global', 'new', 'report']",Climate Action and Global Leadership
+2018,"['trump', 'new', 'world', 'report', 'study', 'fight', 'scientist', 'science']",Climate Action and U.S. Leadership
+2019,"['fight', 'cmv', 'scientist', 'world', 'people', 'real', 'stop', 'need']",Climate Action and Public Awareness
+2019,"['people', 'world', 'bernie', 'year', 'new', 'time', 'like', 'action']",Global Action and Leadership
+2019,"['new', 'trump', 'world', 'fight', 'comment', 'protest', 'greta', 'news']",Climate Action and Global Protest
+2020,"['people', 'world', 'year', 'think', 'like', 'new', 'global', 'bernie']",Global Action and Leadership
+2020,"['fight', 'trump', 'new', 'world', 'biden', 'news', 'global', 'fire']",Climate Action and U.S. Leadership
+2020,"['fight', 'coronavirus', 'real', 'stop', 'world', 'global', 'blame', 'study']",Covid
+2021,"['fight', 'world', 'stop', 'help', 'bad', 'need', 'real', 'global']",Climate Action
+2021,"['people', 'world', 'year', 'like', 'new', 'think', 'global', 'time']",Global Leadership and Climate Action
+2021,"['new', 'biden', 'fight', 'world', 'news', 'fuel', 'report', 'china']",Climate Action and U.S. Leadership
+2022,"['fight', 'world', 'stop', 'help', 'bad', 'need', 'real', 'global']",Climate Action
+2022,"['people', 'world', 'year', 'like', 'new', 'think', 'global', 'time']",Global Leadership and Climate Action
+2022,"['new', 'biden', 'fight', 'world', 'news', 'fuel', 'report', 'china']",Climate Action and U.S. Leadership
