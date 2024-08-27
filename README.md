@@ -1,24 +1,5 @@
-# dlss-project24
+# You find all our code in the folder 'code'. 
 
+# In the folder data you find a link to our Drive folder with all used datasets
 
-https://www.notion.so/Work-plan-7827acf388494c70b46238f8a088df31?pvs=4
-
-# Open Questions
-- how do we deal with deleted texts? nsfw subreddits?
-
-## Replication
-
-### Venv
-1. Create: python -m venv venv
-
-2. Activate:
-- Windows: .\venv\Scripts\activate
-- Mac: source venv/bin/activate
-
-pip install -r packages.txt
-
-deactivate
-
-## Preprocessing
-
-## Preliminary analysis
+# And under 'output' all our results are saved.
